@@ -1,16 +1,19 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 //Global ใช้ทุกที่
-string name = "";
-string id = "";
-double price = 0;
-double amount = 0;
-double rate1 = 0;
+string name = "Coffee";
+string id = "11";
+double price = 10;
+double amount = 10;
+double rate1 = 0.5;
 Random rnd = new();
 //เรียกใช้
-Input();
+//Input();
+Display();
+Update(ref id, ref name, ref price);
 Display();
 
+//void = no return value
 void Display()
 {
     Console.WriteLine($"ID : {id}");
@@ -36,4 +39,11 @@ double Process(double rate)
     var sum = price * amount;
     var result = sum - (sum * rate);
     return result;
+}
+//ref การส่งตัวแปรแบบอ้างอิง ชี้ตำแหน่งเดียวกันใน Memory
+void Update(ref string Id, ref string Name, ref double Price)
+{
+    Id += "555";
+    Name += "555";
+    Price += 555;
 }
