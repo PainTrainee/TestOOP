@@ -20,6 +20,7 @@ Price = price;
 Amount = amount;
 Console.WriteLine($"{Id} {Name} {Price} {Amount}");
 Display();
+Console.WriteLine($"Summary = {Summary(1, 2, 3, 4, 5)}");
 //void = no return value
 void Display()
 {
@@ -61,4 +62,13 @@ double Cal(out string id,out string name, out double price, out double amount)
     price = 5;
     amount = 5;
     return 0.1;
+}
+//params การส่ง array หรือชุดของข้อมูลไปเป็นพารามิเตอร์
+double Summary(params int[] numbers)
+{
+    foreach (var item in numbers)
+    {
+        Console.Write(item + " ");
+    }
+    return numbers.Sum();
 }
