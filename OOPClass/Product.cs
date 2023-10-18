@@ -12,6 +12,13 @@ namespace OOPClass
         //get อ่านค่า
         //set ใส่ค่า
         //Lambda , Arrow function
-        public void Display() => Console.WriteLine($"{Id} {Name} {Price} {Amount}");
+        public void Display() => Console.WriteLine($"{Id} {Name} {Price.ToString("#,###.##")} {Amount}");
+        public void Input(Product product)
+        {
+            Id = product.Id;
+            Name = product.Name;
+            Price = product.Price;
+            Amount = product.Amount;
+        }
     }
 }
