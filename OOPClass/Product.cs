@@ -20,5 +20,21 @@ namespace OOPClass
             Price = product.Price;
             Amount = product.Amount;
         }
+        public List<Product> GenerateProduct(int number = 10)
+        {
+            var products = new List<Product>();
+            Random rnd = new();
+            for (int i = 1; i <= number; i++)
+            {
+                products.Add(new Product
+                {
+                    Id = i,
+                    Name = "Coffee" + i,
+                    Price = rnd.NextDouble() * 990 + 10,
+                    Amount = rnd.Next(1, 10)
+                });
+            }
+            return products;
+        }
     }
 }
