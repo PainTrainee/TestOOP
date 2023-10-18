@@ -11,5 +11,7 @@ namespace OOPClass
         //default method get set
         //get อ่านค่า
         //set ใส่ค่า
+        //Lambda , Arrow function
+        public void Display() => Console.WriteLine($"{Id} {Name} {Price} {Amount}");
     }
 }

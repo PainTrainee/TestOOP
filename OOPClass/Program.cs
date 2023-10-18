@@ -16,9 +16,5 @@ ton.Name = "Pseudo-Brain";
 ton.Price = 20;
 ton.Amount = 20;
 //Reuse ใช้ซ้ำ
-Display(product);
-Display(ton);
-void Display(Product p)
-{
-    Console.WriteLine($"{p.Id} {p.Name} {p.Price} {p.Amount}");
-}
+product.Display();
+ton.Display();
