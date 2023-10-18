@@ -38,7 +38,6 @@ void Input()
     rate1 = double.Parse(Console.ReadLine());
     Price = rnd.Next(10, 100);
     Amount = rnd.Next(1, 10);
-
 }
 double Process(double rate)
 {
