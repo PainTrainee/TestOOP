@@ -18,7 +18,6 @@
         }
         string Show(double number)
         {
-            
             return number.ToString("#,###.##");
         }
     }
