@@ -1,40 +1,30 @@
 ﻿
 namespace OOPClass
 {
-    public class Product //แม่แบบ แบบฟอร์ม
+    public class CarSeller
     {
-        //attributes, property คุณสมบัติ
-        public int Id { get; set; }
+        public string Id { get; set; }
         public string Name { get; set; }
-        public double Price { get; set; }
-        public int Amount { get; set; }
-        //default method get set
-        //get อ่านค่า
-        //set ใส่ค่า
-        //Lambda , Arrow function
-        public void Display() => Console.WriteLine($"{Id} {Name} {Price.ToString("#,###.##")} {Amount}");
-        public void Input(Product product)
+        public double Salary { get; set; }
+        public int Topsale { get; set; }
+        public double Rate { get; set; }
+        public List<CarSeller> Generate(int number)
         {
-            Id = product.Id;
-            Name = product.Name;
-            Price = product.Price;
-            Amount = product.Amount;
-        }
-        public List<Product> GenerateProduct(int number = 10)
-        {
-            var products = new List<Product>();
+            var products = new List<CarSeller>();
             Random rnd = new();
             for (int i = 1; i <= number; i++)
             {
-                products.Add(new Product
+                products.Add(new CarSeller
                 {
-                    Id = i,
-                    Name = "Coffee" + i,
-                    Price = rnd.NextDouble() * 990 + 10,
-                    Amount = rnd.Next(1, 10)
+                    Id = i.ToString(),
+                    Name = "Employee" + i,
+                    Salary = rnd.NextDouble() * 990 + 10,
+                    Topsale = rnd.Next(10, 5000),
+                    Rate = rnd.NextDouble()
                 });
             }
             return products;
         }
+        public void Display() => Console.WriteLine($"{Id} {Name} {Salary.ToString("#,###.##")} {Topsale} {Rate.ToString("#,###.##")} {((Salary + (Topsale * Rate)) - ((Salary + (Topsale * Rate)) * 0.05)):#,###.##}");
     }
 }
