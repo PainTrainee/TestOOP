@@ -1,5 +1,6 @@
 ﻿using P02_Constructor;
 
-new Product();
-new Product(100);
-new Product(100, "aaaa");
+//var products = new Product();
+var products = new Product("Banana");
+products.GenerateProducts(100);
+products.Display();

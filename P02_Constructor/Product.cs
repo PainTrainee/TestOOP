@@ -1,24 +1,47 @@
-﻿namespace P02_Constructor
+﻿using static System.Runtime.InteropServices.JavaScript.JSType;
+
+namespace P02_Constructor
 {
     public class Product
     {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public double Price { get; set; }
+        public int Amount { get; set; }
         //Constructor ชื่อเดียวกับคลาส
         //default when initialize an object
         public Product()
         {
-            Console.WriteLine("Hello, Constructor");
+            Products = new List<Product>();
         }
         public Product(int number)
         {
             Console.WriteLine(number);
         }
-        public Product(int number, string name)
+        public Product(string name)
         {
-            Console.WriteLine($"{number} {name}");
+            Products = new List<Product>();
+            Name = name;
         }
-        public void Productaaa()
+        public List<Product> Products { get; set; }
+        public void GenerateProducts(int number = 1)
         {
+            Random rnd = new();
+            for (int i = 1; i <= number; i++)
+            {
+                Products.Add(new Product
+                {
+                    Id = i,
+                    Name = Name + i,
+                    Price = rnd.NextDouble() * 990 + 10,
+                    Amount = rnd.Next(10, 5000)
+                });
+            }
+        }
+        public void Display() 
+        {
+            Products.ForEach(p => Console.WriteLine($"{p.Id} {p.Name} {p.Price:N2} {p.Amount}"));
+        }
 
-        }
     }
 }
