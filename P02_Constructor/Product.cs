@@ -21,7 +21,8 @@ namespace P02_Constructor
         public Product(string name)
         {
             Products = new List<Product>();
-            Name = name;
+            //this คือ ระบุว่าเป็น properties ภายในคลาส
+            this.Name = Name;
         }
         public List<Product> Products { get; set; }
         public void GenerateProducts(int number = 1)
