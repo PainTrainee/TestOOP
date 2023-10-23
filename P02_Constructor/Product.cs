@@ -18,7 +18,7 @@ namespace P02_Constructor
         {
             Console.WriteLine(number);
         }
-        public Product(string name)
+        public Product(string Name)
         {
             Products = new List<Product>();
             //this คือ ระบุว่าเป็น properties ภายในคลาส
