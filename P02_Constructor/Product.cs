@@ -8,11 +8,12 @@ namespace P02_Constructor
         public string Name { get; set; }
         public double Price { get; set; }
         public int Amount { get; set; }
+        static public int Test {  get; set; }
         //Constructor ชื่อเดียวกับคลาส
         //default when initialize an object
         public Product()
         {
-            Products = new List<Product>();
+            //Products = new List<Product>();
         }
         public Product(int number)
         {
@@ -24,7 +25,8 @@ namespace P02_Constructor
             //this คือ ระบุว่าเป็น properties ภายในคลาส
             this.Name = Name;
         }
-        public List<Product> Products { get; set; }
+        //static การมีอยู่ การฝัง
+        static public List<Product> Products { get; set; } = new List<Product>();
         public void GenerateProducts(int number = 1)
         {
             Random rnd = new();
