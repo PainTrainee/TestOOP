@@ -3,9 +3,11 @@
     internal class GenerateData
     {
         public List<Employee> Employees;
+        public List<GroupAge> GroupAges;
         public GenerateData(int number)
         {
             Employees = new List<Employee>();
+            GroupAges = new List<GroupAge>();
             CreateEmployee(number);
         }
         public void CreateEmployee(int number)
@@ -22,10 +24,30 @@
             }
         }
         public List<Employee> SortBySection() => Employees.OrderBy(p => p.Section).ToList();
+        public List<Employee> SortByAge() => Employees.OrderBy(p => p.Age).ToList();
         public dynamic GroupBySection() 
         {
             Employees = SortBySection();
             return Employees.GroupBy(p => p.Section).ToList(); 
+        }
+        public List<IGrouping<int,GroupAge>> GroupByAge()
+        {
+            Employees = SortByAge();
+            int groupTemp, sectionTemp;
+            foreach (var item in Employees)
+            {
+                //Lambda C# V.8
+                groupTemp = item.Age
+                switch
+                {
+                    <= 30 => 1,
+                    <= 40 => 2,
+                    <= 50 => 3,
+                    _ => 4, //default
+                };
+                GroupAges.Add(new GroupAge { GroupOfAge = groupTemp,Section=item.Section});
+            }
+            return GroupAges.GroupBy(p=>p.GroupOfAge).ToList();
         }
     }
 }

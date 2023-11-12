@@ -9,7 +9,6 @@
         }
         public void Display()
         {
-
             foreach (var emp in GenerateData.SortBySection())
             {
                 Console.WriteLine($"{emp.Section,3} {SectionText(emp.Section),-15} {emp.Id} {emp.Age,3}");
@@ -61,6 +60,30 @@
                 case 4: text = "Marketing"; break;
                 case 5: text = "Sale"; break;
                 case 6: text = "Section6"; break;
+            }
+            return text;
+        }
+        public void DisplayByGroupAge()
+        {
+            foreach (var group in GenerateData.GroupByAge())
+            {
+                Console.Write($"{NameOfAge(group.Key),5}");
+                for (int i = 1; i < 5; i++)
+                {
+                    Console.Write($"{group.Count(p => p.Section == i),5}");
+                }
+                Console.WriteLine();
+            }
+        }
+        public string NameOfAge(int age)
+        {
+            string text = null;
+            switch (age)
+            {
+                case 1: text = "25-30"; break;
+                case 2: text = "31-40"; break;
+                case 3: text = "41-50"; break;
+                case 4: text = "51-60"; break;
             }
             return text;
         }
