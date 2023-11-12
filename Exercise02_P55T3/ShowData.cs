@@ -26,6 +26,30 @@
                 }
             }
         }
+        public void DisplaySectionAge()
+        {
+            Console.WriteLine("\t\tSection");
+            Console.WriteLine($"AgeRange {SectionText(1),-8}{SectionText(2),-10}{SectionText(3),-5}{SectionText(4),-10}{SectionText(5),-8}");
+            string[] yearrange = { "25-30" ,"31-40","41-50","51-60"};
+            foreach (var range in yearrange) //year 
+            {
+                int[] agerange = { int.Parse(range.Split("-")[0]), int.Parse(range.Split("-")[1]) };
+                Console.Write($"{range,-5}");
+                foreach (var group in GenerateData.GroupBySection()) //section group
+                {
+                    int index = 0;
+                    foreach (var item in group) //member
+                    {
+                        if (item.Age >= agerange[0] && item.Age <= agerange[1])
+                        {
+                            index++; 
+                        }
+                    }
+                    Console.Write($"{index,8}");
+                }
+                Console.WriteLine();
+            }
+        }
         public string SectionText(int section)
         {
             string text = null;

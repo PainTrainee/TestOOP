@@ -2,3 +2,4 @@
 
 ShowData showData = new ShowData();
 showData.DisplayBySectionGroup();
+showData.DisplaySectionAge();
