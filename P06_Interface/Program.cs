@@ -6,4 +6,5 @@ ps.DisplayProduct();
 //ps.DisplayPriceType();
 //ps.SearchProduct();
 //ps.SearchByAny();
-ps.DeleteProductById();
+//ps.DeleteProductById();
+ps.UpdateProductService();

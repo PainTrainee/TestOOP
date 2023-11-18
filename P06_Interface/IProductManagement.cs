@@ -9,5 +9,7 @@
         Product GetProductById(int productId);
         List<Product> GetProductByAny(int number, string keyword);
         void DeleteById(Product product);
+        void UpdateProduct(Product newProduct,Product oldProduct);
+        Product InputProduct(Product product);
     }
 }
