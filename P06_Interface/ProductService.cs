@@ -88,6 +88,20 @@
             if (result == null) { Console.WriteLine("Not Found"); }
             else { Console.WriteLine($"{result.Id,5} {result.Name,5} {result.Price,5} {result.Type,5}"); }
         }
+        public void SearchByAny()
+        {
+            Console.Write("Enter number : ");
+            var number = int.Parse(Console.ReadLine());
+            Console.Write("Enter keyword : ");
+            var keyword = Console.ReadLine();
+
+            var result = ProductManagement.GetProductByAny(number,keyword);
+            if (result.Count == 0) { Console.WriteLine("Not Found"); }
+            else
+            {
+                result.ForEach(x => Console.WriteLine($"{x.Id,5} {x.Name,5} {x.Price,5} {x.Type,5}"));
+            }
+        }
     }
     public class TempGroup
     {
