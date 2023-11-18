@@ -11,10 +11,19 @@
         {
             Products.Add(product);
         }
+        
 
         public List<Product> GetProducts()
         {
             return Products;
+        }
+
+        public Product GetProductById(int productId)
+        {
+            //alternative
+            //Products.Where(p => p.Id == productId).FirstOrDefault();
+            //Products.Find(p => p.Id.Equals(productId));
+            return Products.FirstOrDefault(p => p.Id == productId);
         }
     }
 }

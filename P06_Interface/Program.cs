@@ -2,4 +2,6 @@
 
 var ps = new ProductService();
 ps.GenerateProduct(20);
-ps.DisplayPriceType();
+ps.DisplayProduct();
+//ps.DisplayPriceType();
+ps.SearchProduct();
