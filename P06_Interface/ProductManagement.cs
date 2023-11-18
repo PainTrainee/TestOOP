@@ -3,12 +3,9 @@
     public class ProductManagement : IProductManagement
     {
         public List<Product> Products { get; set; }
-        public Product Product { get; set; }
-
         public ProductManagement()
         {
             Products = new List<Product>();
-            Product = new Product();
         }
         public void AddProduct(Product product)
         {
