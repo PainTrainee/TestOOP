@@ -80,13 +80,15 @@
                 _ => " ",
             };
         }
-        public void SearchProduct()
+        public Product SearchProduct()
         {
             Console.Write("Enter ID : ");
             var id = int.Parse(Console.ReadLine());
             var result = ProductManagement.GetProductById(id);
-            if (result == null) { Console.WriteLine("Not Found"); }
+            if (result == null) { Console.WriteLine("Not Found");}
             else { Console.WriteLine($"{result.Id,5} {result.Name,5} {result.Price,5} {result.Type,5}"); }
+            return result;
+
         }
         public void SearchByAny()
         {
@@ -101,6 +103,14 @@
             {
                 result.ForEach(x => Console.WriteLine($"{x.Id,5} {x.Name,5} {x.Price,5} {x.Type,5}"));
             }
+        }
+        public void DeleteProductById()
+        {
+            var result = SearchProduct();
+            if (result == null) return;
+            ProductManagement.DeleteById(result);
+            Console.WriteLine();
+            DisplayProduct();
         }
     }
     public class TempGroup

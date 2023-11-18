@@ -5,4 +5,5 @@ ps.GenerateProduct(20);
 ps.DisplayProduct();
 //ps.DisplayPriceType();
 //ps.SearchProduct();
-ps.SearchByAny();
+//ps.SearchByAny();
+ps.DeleteProductById();
