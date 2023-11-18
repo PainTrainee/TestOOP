@@ -16,6 +16,7 @@
                 {
                     Id = i,
                     Name = "Coffee-" + i,
+                    Type = rnd.Next(1,6),
                     Price = rnd.Next(10, 200)
                 });
             }
@@ -24,7 +25,7 @@
         {
             foreach (var item in ProductManagement.GetProducts())
             {
-                Console.WriteLine($"{item.Id,5}{item.Name,10}{item.Price,10}");
+                Console.WriteLine($"{item.Id,5}{item.Name,10}{item.Type,5}{item.Price,10}");
             };
         }
         public List<Product> OrderByPrice()
@@ -36,7 +37,7 @@
         {
             var temp = new List<TempGroup>();
             int tempGr;
-            foreach (var item in ProductManagement.Products)
+            foreach (var item in ProductManagement.Products.OrderBy(p=>p.Price))
             {
                 tempGr = item.Price switch
                 {
@@ -44,7 +45,7 @@
                     <= 200 => 2,
                     _ => 3,
                 };
-                temp.Add(new TempGroup { group = tempGr });
+                temp.Add(new TempGroup { group = tempGr, groupType = item.Type });
             }
             return temp;
         }
@@ -54,6 +55,20 @@
             foreach (var item in numOfGroup)
             {
                 Console.WriteLine($"{NameOfPrice(item.Key)} {GroupByPrice().Count(p=>p.group == item.Key)}");
+            }
+        }
+        public void DisplayPriceType()
+        {
+            var numOfGroup = GroupByPrice().GroupBy(p => p.group);
+            Console.WriteLine($"Type{1,9}{2,5}{3,5}{4,5}{5,5}");
+            foreach (var item in numOfGroup)
+            {
+                Console.Write($"{NameOfPrice(item.Key),8}");
+                for (int i = 1; i <= 5; i++)
+                {
+                    Console.Write($"{item.Count(x => x.groupType == i),5}");
+                }
+                Console.WriteLine();
             }
         }
         private string NameOfPrice(int price)
@@ -69,5 +84,11 @@
     public class TempGroup
     {
         public int group { get; set; }
+        public int groupType { get; set; }
     }
+    /*
+        ประเภทสินค้า  1   2   3   4   5
+        10-100
+        101-200
+    */
 }
