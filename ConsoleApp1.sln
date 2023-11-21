@@ -21,9 +21,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exercise02_P55T3", "Exercis
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P04-Polymorphism", "P04-Polymorphism\P04-Polymorphism.csproj", "{B63D0D82-DBE9-49EE-9A4E-057F89D81C41}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P05-Interface", "P05-Interface\P05-Interface.csproj", "{A4C0104D-5FA1-4BCE-B38F-0448E478BC5F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P05-Interface", "P05-Interface\P05-Interface.csproj", "{A4C0104D-5FA1-4BCE-B38F-0448E478BC5F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P06_Interface", "P06_Interface\P06_Interface.csproj", "{42CDA511-4D84-4DA1-BA73-94D57716562C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P06_Interface", "P06_Interface\P06_Interface.csproj", "{42CDA511-4D84-4DA1-BA73-94D57716562C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P07_Exception", "P07_Exception\P07_Exception.csproj", "{2F04FA74-5826-41ED-AC48-9D307A1BD40C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +77,10 @@ Global
 		{42CDA511-4D84-4DA1-BA73-94D57716562C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{42CDA511-4D84-4DA1-BA73-94D57716562C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{42CDA511-4D84-4DA1-BA73-94D57716562C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F04FA74-5826-41ED-AC48-9D307A1BD40C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F04FA74-5826-41ED-AC48-9D307A1BD40C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F04FA74-5826-41ED-AC48-9D307A1BD40C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F04FA74-5826-41ED-AC48-9D307A1BD40C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
